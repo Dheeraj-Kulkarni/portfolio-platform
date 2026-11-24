@@ -1,0 +1,11 @@
+packages:
+ - 'apps/*'
+ - 'libs/*'
+allowBuilds:
+  '@parcel/watcher': false
+  '@scarf/scarf': false
+  argon2: true
+  esbuild: true
+  lmdb: false
+  msgpackr-extract: false
+  protobufjs: false
