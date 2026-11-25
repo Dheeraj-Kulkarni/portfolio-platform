@@ -5,6 +5,7 @@ import { AppService } from './app.service.js';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { databaseConfig } from './database/db.config.js';
+import { HealthModule } from './modules/health/health.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -27,6 +28,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       inject: [ConfigService],
       useFactory: databaseConfig,
     }),
+    HealthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -12,12 +13,16 @@ export class ProfileEntity {
 
   @Column({
     name: 'full_name',
+    type: 'varchar',
     length: 150,
+    default: '',
   })
   fullName: string;
 
   @Column({
+    type: 'varchar',
     length: 200,
+    default: '',
   })
   headline: string;
 
@@ -37,28 +42,33 @@ export class ProfileEntity {
 
   @Column({
     name: 'avatar_url',
+    type: 'varchar',
     nullable: true,
   })
   avatarUrl: string;
 
   @Column({
     name: 'resume_url',
+    type: 'varchar',
     nullable: true,
   })
   resumeUrl: string;
 
   @Column({
+    type: 'varchar',
     nullable: true,
   })
   location: string;
 
   @Column({
     name: 'public_email',
+    type: 'varchar',
     nullable: true,
   })
   publicEmail: string;
 
   @Column({
+    type: 'boolean',
     default: true,
   })
   availability: boolean;
@@ -85,6 +95,7 @@ export class ProfileEntity {
 
   @CreateDateColumn({
     name: 'created_at',
+    default: () => 'CURRENT_TIMESTAMP',
   })
   createdAt: Date;
 }
