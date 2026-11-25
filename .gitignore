@@ -3,3 +3,8 @@ node_modules
 !.env.example
 .claude*
 .agents*
+tsconfig.build.tsbuildinfo
+apps/api/tsconfig.build.tsbuildinfo
+migrations*
+apps/api/dist
+apps/web/dist
