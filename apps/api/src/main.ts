@@ -22,6 +22,7 @@ async function bootstrap() {
     app,
     SwaggerModule.createDocument(app, config),
   );
+  console.log('DATABASE_URL loaded:', !!process.env.DATABASE_URL);
   await app.listen(process.env.PORT ?? 3000);
 }
 await bootstrap();
